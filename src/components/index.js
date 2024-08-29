@@ -5,6 +5,7 @@ import HeroSection from './HeroSection/HeroSection'
 import Trusted from "./Trusted/Trusted"
 import Features from "./Features/Features"
 import logo from '../../public/logo-transparent.webp'
+import ContactComp from './Contact/Contact'
 export {
     Header,
     Footer,
@@ -12,6 +13,7 @@ export {
     HeroSection,
     Trusted,
     Features,
+    ContactComp,
     logo
 }
 
