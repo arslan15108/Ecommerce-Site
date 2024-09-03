@@ -1,15 +1,15 @@
 import React from 'react'
 import { HeroSection, Trusted , Features } from '../components'
+import FeaturedProducts from '../components/FeaturedProducts/FeaturedProducts'
 
 
 function Home() {
-  const data = {
-    title : 'eCommerce Store'
-  }
+  
   return (
     <main>
-      <HeroSection data = {data} />
+      <HeroSection  />
       <Trusted />
+      <FeaturedProducts />
       <Features />
     </main>
   )

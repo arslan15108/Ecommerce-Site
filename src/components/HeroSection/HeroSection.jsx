@@ -1,12 +1,31 @@
-import React from "react"
+import React, { useContext, useEffect, useReducer } from "react"
 import { logo } from ".."
 import { motion } from "framer-motion"
+import ProductContext from "../../context/Context"
+import { useLocation } from "react-router-dom";
+import ProductReducer from "../../reducer/productReducer";
+import { initialState } from "../../context/ProductContext";
 
-export default function HeroSection({data}) {
+
+export default function HeroSection() {
+  const location = useLocation();
+
+  const {title,updateTitle} = useContext(ProductContext)
+
+  
+
+  // const [dispatch] = useReducer(ProductReducer);
+  // const {title} = useContext(ProductContext);
+
     
-    const {title} = data;
+  useEffect(() =>{
+    updateTitle(location.pathname);
+    // console.log(title);
+    
+  },[])
 
-
+  
+    
 
   return (
     <div className="relative isolate">
@@ -58,8 +77,11 @@ export default function HeroSection({data}) {
             className="bg-purple-300 rounded-2xl"
             >
               <h1
-               className="inline pr-4 py-4 text-2xl font-bold tracking-tight text-black sm:text-5xl">
-                  <img className="inline w-20 lg:w-32" src={logo} /> {title}
+               className={`${location.pathname === '/about' ? 'sm:text-4xl' : 'sm:text-5xl'} inline pr-4 py-4 text-2xl font-bold tracking-tight text-black`}>
+                  <img className="inline w-20 lg:w-32" src={logo} /> {
+                    // dispatch({type:'Title'})
+                    title
+                  }
               </h1>
             </motion.div>
             <p className="mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">

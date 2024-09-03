@@ -1,6 +1,6 @@
 import React from 'react'
 import { BuildingOffice2Icon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
-import { useForm, ValidationError } from '@formspree/react';
+
 
 export default function ContactComp() {
   // const [state, handleSubmit] = useForm("mjkblpgj");
