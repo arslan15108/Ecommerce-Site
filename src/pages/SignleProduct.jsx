@@ -2,7 +2,9 @@ import React from 'react'
 
 function SignleProduct() {
   return (
-    <div>SignleProduct</div>
+    <div>
+      
+    </div>
   )
 }
 

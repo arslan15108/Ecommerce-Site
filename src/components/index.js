@@ -6,6 +6,8 @@ import Trusted from "./Trusted/Trusted"
 import Features from "./Features/Features"
 import logo from '../../public/logo-transparent.webp'
 import ContactComp from './Contact/Contact'
+import Product from "./Product/Product"
+import FeaturedProducts from "./FeaturedProducts/FeaturedProducts"
 export {
     Header,
     Footer,
@@ -14,6 +16,8 @@ export {
     Trusted,
     Features,
     ContactComp,
+    Product,
+    FeaturedProducts,
     logo
 }
 

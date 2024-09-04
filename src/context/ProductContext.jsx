@@ -12,6 +12,8 @@ export const initialState = {
     isError : false,
     products: [],
     featuredProducts : [],
+    isSingleLoading : false,
+    singleProduct : {},
 }
 
 const ProductProvider = ({children}) => {
@@ -35,9 +37,22 @@ const ProductProvider = ({children}) => {
         // setProducts(products);   
     }
 
+    const getSingleProduct = async (url) => {
+        dispatch({type: "SET_SINGLE_LOADING"})
+        try {
+            const response = await axios.get(url);
+            const singleProduct = await response.data;
+            
+            dispatch({type: 'SET_SINGLE_PRODUCT', payload: singleProduct})
+        } catch (error) {
+            dispatch({type: "API_SINGLE_ERROR"})
+        }
+    }
+
 
     useEffect(()=>{
         getProducts(api);
+        getSingleProduct(api);
     },[])
 
      const updateTitle = (location) => {
@@ -50,7 +65,7 @@ const ProductProvider = ({children}) => {
     // }
 
     return (
-        <ProductContext.Provider value={{...state,updateTitle}}>
+        <ProductContext.Provider value={{...state,updateTitle,getSingleProduct}}>
             {children}
         </ProductContext.Provider>
 
