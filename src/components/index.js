@@ -8,6 +8,7 @@ import logo from '../../public/logo-transparent.webp'
 import ContactComp from './Contact/Contact'
 import Product from "./Product/Product"
 import FeaturedProducts from "./FeaturedProducts/FeaturedProducts"
+import FormatPrice from "./FormatPrice/FormatPrice"
 export {
     Header,
     Footer,
@@ -18,6 +19,7 @@ export {
     ContactComp,
     Product,
     FeaturedProducts,
+    FormatPrice,
     logo
 }
 

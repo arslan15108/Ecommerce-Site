@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
+import {FormatPrice} from '../index';
 
 const Product = ({product}) => {
   const {id,name,price,image,category} = product;
@@ -18,7 +19,7 @@ const Product = ({product}) => {
             </h3>
             <p className='font-bold font-mono tracking-wide text-gray-500'>
               {
-              Intl.NumberFormat('pk-PK', { style: 'currency', currency: 'PKR', maximumFractionDigits:2 }).format(price/100)
+              <FormatPrice price={price} />
               }
             </p>
           </div>

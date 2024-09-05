@@ -7,7 +7,9 @@ import {Product} from '../index'
   export default function FeaturedProducts() {
 
     const {isLoading, featuredProducts } = useContext(ProductContext);
+    console.log(featuredProducts,isLoading);
 
+    
     if (isLoading) {
       return <div className='flex justify-center py-20 bg-gray-200'>
         <ClockLoader color="#4740db" size='120px' />

@@ -7,11 +7,12 @@ import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Products from './pages/Products.jsx'
 import Contact from './pages/Contact.jsx'
-import SignleProduct from './pages/SignleProduct.jsx'
+
 import Cart from './pages/Cart.jsx'
 import ErrorPage from './pages/ErrorPage.jsx'
 import ProductContext from './context/Context.jsx'
 import ProductProvider from './context/ProductContext.jsx'
+import SingleProduct from './pages/SingleProduct.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -19,7 +20,7 @@ const router = createBrowserRouter(
       <Route path='' element = {<Home />} />
       <Route path='about' element = {<About />} />
       <Route path='products' element = {<Products />} />
-      <Route path='singleproduct/:id' element = {<SignleProduct />} />
+      <Route path='SingleProduct/:id' element = {<SingleProduct />} />
       <Route path='contact' element = {<Contact />} />
       <Route path='cart' element = {<Cart />} />
       <Route path='*' element = {<ErrorPage />} />

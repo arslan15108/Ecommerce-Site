@@ -4,8 +4,7 @@ import axios from "axios";
 import reducer from "../reducer/productReducer"
 
 
-const api = "https://api.pujakaitem.com/api/products";
-    
+
 export const initialState = {
     title : '',
     isLoading : false,
@@ -13,11 +12,14 @@ export const initialState = {
     products: [],
     featuredProducts : [],
     isSingleLoading : false,
+    isSingleError: false,
     singleProduct : {},
+    
 }
 
 const ProductProvider = ({children}) => {
- 
+    const api = "https://api.pujakaitem.com/api/products";
+    
     const [state,dispatch] = useReducer(reducer, initialState);
 
     const [title,setTitle] = useState('');
@@ -30,6 +32,7 @@ const ProductProvider = ({children}) => {
        try {
          const response = await axios.get(url);
          const products = await response.data;
+         
          dispatch({type:'PRODUCTS_API',payload: products});
        } catch (error) {
             dispatch({type:'API_ERORR'})
@@ -38,21 +41,20 @@ const ProductProvider = ({children}) => {
     }
 
     const getSingleProduct = async (url) => {
-        dispatch({type: "SET_SINGLE_LOADING"})
         try {
+            dispatch({type: "SET_LOADING"})
             const response = await axios.get(url);
             const singleProduct = await response.data;
-            
             dispatch({type: 'SET_SINGLE_PRODUCT', payload: singleProduct})
         } catch (error) {
-            dispatch({type: "API_SINGLE_ERROR"})
+            dispatch({type: "API_ERORR"})
         }
     }
 
 
     useEffect(()=>{
         getProducts(api);
-        getSingleProduct(api);
+
     },[])
 
      const updateTitle = (location) => {
@@ -65,7 +67,7 @@ const ProductProvider = ({children}) => {
     // }
 
     return (
-        <ProductContext.Provider value={{...state,updateTitle,getSingleProduct}}>
+        <ProductContext.Provider value={{...state,updateTitle,getProducts,getSingleProduct,api}}>
             {children}
         </ProductContext.Provider>
 

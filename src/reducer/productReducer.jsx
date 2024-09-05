@@ -33,8 +33,14 @@ const ProductReducer = (state,action) => {
                 isLoading : false,
                 isERROR : true,
             }
-
-    
+            
+        case "SET_SINGLE_PRODUCT":
+            return {
+                ...state,
+                isLoading : false,
+                singleProduct: action.payload,
+            }
+            
         default:
             break;
     }
