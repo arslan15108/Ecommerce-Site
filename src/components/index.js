@@ -9,6 +9,7 @@ import ContactComp from './Contact/Contact'
 import Product from "./Product/Product"
 import FeaturedProducts from "./FeaturedProducts/FeaturedProducts"
 import FormatPrice from "./FormatPrice/FormatPrice"
+import AddToCart from "./AddToCart/AddToCart"
 export {
     Header,
     Footer,
@@ -20,6 +21,7 @@ export {
     Product,
     FeaturedProducts,
     FormatPrice,
+    AddToCart,
     logo
 }
 

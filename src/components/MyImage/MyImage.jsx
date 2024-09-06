@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 const MyImage = ({images = [{url:""}]}) => {
 
     const [mainImage,setMainImage] = useState(images[0]);
-    console.log(images);
+    // console.log(images);
     
     
   return (
