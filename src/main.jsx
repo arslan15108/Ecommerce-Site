@@ -14,6 +14,7 @@ import ProductContext from './context/Context.jsx'
 import ProductProvider from './context/ProductContext.jsx'
 import SingleProduct from './pages/SingleProduct.jsx'
 
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element = {<App />}>

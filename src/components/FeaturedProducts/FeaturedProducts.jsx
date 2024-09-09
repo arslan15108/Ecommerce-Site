@@ -21,7 +21,7 @@ import {Product} from '../index'
         <div className='title'>
             <h3 className='text-center text-4xl font-bold tracking-widest font-mono mt-20'>Featured Products</h3>
         </div>
-        <div className='lg:max-w-screen-lg mx-auto mt-10 mb-20 sm:grid sm:content-between sm:grid-cols-3 sm:gap-px sm:divide-y-0'>
+        <div className='lg:max-w-screen-lg mx-auto mt-10 mb-20 sm:grid  sm:content-between sm:grid-cols-3 sm:gap-5 sm:divide-y-0'>
             {featuredProducts.map((product,index) => (
               <Product key={index} product={product} />
             ))}

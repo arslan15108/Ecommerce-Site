@@ -1,3 +1,6 @@
+@import '@fontsource/Poppins';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
